@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import PropTypes from 'prop-types';
 import ContactList from './ContactList';
+// import {Button} from 'react-bootstrap'
 import './index.css';
 
 let contacts=[{
