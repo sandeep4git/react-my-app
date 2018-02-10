@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ContactList from './ContactList';
-// import {Button} from 'react-bootstrap'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/fontawesome/index.js'
+import '../node_modules/jquery/dist/jquery.js'
 import './index.css';
 
 let contacts=[{
@@ -39,14 +41,13 @@ class App extends React.Component {
         return (
 
             <div>
-                <h1>Contact List</h1>
+                <h1>Contact List<i className="fa fa-car"></i></h1>
                 <ContactList contacts={this.props.contacts}/>
             </div>
         );
     }
 
 }
-
 
 // ========================================
 
