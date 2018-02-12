@@ -1,8 +1,12 @@
 import React from 'react';
 
 const Contact  =({contact}) =>
-                <li className="list-group-item">
-                    {contact.name} {contact.phone}
-                </li>
+
+    <tr>
+        <th>{contact.name}</th>
+        <td>{contact.phone}</td>
+        <td>{contact.company}</td>
+        <td>{contact.email}</td>
+    </tr>
 
 export default Contact;

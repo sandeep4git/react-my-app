@@ -1,0 +1,17 @@
+.form-control{
+    width:20% !important;
+    padding:10px !important;
+    margin:0.5%;
+}
+
+.btn{
+    margin:0.5%;
+}
+.navbar-brand{
+    color:whitesmoke!important;
+}
+.heading{
+    font-family: "Helvetica Neue";
+    padding:10px !important;
+
+}

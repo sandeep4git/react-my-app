@@ -24,12 +24,16 @@ class ContactList extends React.Component {
             console.log(this.refs.phone.value);
             var name = this.refs.name.value;
             var phone = this.refs.phone.value;
+            var company=this.refs.company.value;
+            var email=this.refs.email.value;
             var id = Math.floor((Math.random() * 100) + 1);
             this.setState({
-                contacts: this.state.contacts.concat({id, name, phone})
+                contacts: this.state.contacts.concat({id, name, phone,company,email})
             })
             this.refs.name.value = '';
             this.refs.phone.value = '';
+            this.refs.company.value = '';
+            this.refs.email.value = '';
         }
     }
 
@@ -41,17 +45,35 @@ class ContactList extends React.Component {
         );
         return(
             <div>
-                <input className="input-group-lg" type="text" placeholder="Search" value={this.state.value} onChange={this.updateValue.bind(this)}/>
-                <form onSubmit={this.addContact.bind(this)}>
-                    <input className="input-group-lg" type="" ref="name"/>
-                    <input className="input-group-lg" type="" ref="phone"/>
-                    <button type="submit" className="btn btn-outline-primary btn-sm">Add</button>
+                <nav className="navbar navbar-inverse bg-primary justify-content-between">
+                    <a className="navbar-brand">MY Contacts</a>
+                        <input className="form-control mr-sm-2" type="text" placeholder="Search" value={this.state.value} onChange={this.updateValue.bind(this)}/>
+                </nav>
+                <div class="card bg-light">
+                <form  className="card-body" onSubmit={this.addContact.bind(this)}>
+                    <h3 className="heading">Create Contact</h3>
+                    <input className="form-control mr-sm-2" placeholder="Name" type="" ref="name" required/>
+                    <input className="form-control mr-sm-2" placeholder="Phone" type="" ref="phone" required/>
+                    <input className="form-control mr-sm-2" placeholder="Company" type="" ref="company" />
+                    <input className="form-control mr-sm-2" placeholder="Email" type="" ref="email" required/>
+                    <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">ADD</button>
                 </form>
-                <ul className="list-group">
+                </div>
+                <table className="table table-hover">
+                    <thead>
+                    <tr className="bg-primary text-white">
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {filteredContacts.map((contact)=>{
-                    return <Contact contact={contact} key={contact.id}/>
+                        return <Contact contact={contact} key={contact.id}/>
                     })}
-                </ul>
+                    </tbody>
+                </table>
             </div>
         )
     }

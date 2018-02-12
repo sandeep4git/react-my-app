@@ -4,27 +4,37 @@ import ContactList from './ContactList';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/fontawesome/index.js'
 import '../node_modules/jquery/dist/jquery.js'
+import Popper from '../node_modules/popper.js/dist/popper-utils.js';
+import '../node_modules/bootstrap/dist/js/bootstrap.js'
 import './index.css';
 
 let contacts=[{
     id:1,
     name:'Sandeep',
-    phone:'573 789 1477'
+    phone:'573 789 1477',
+    company:"PayPal Inc",
+    email:"abc@abc.com"
     },
     {
         id:2,
         name:'Supriya',
-        phone:'573 789 1488'
+        phone:'573 789 1488',
+        company:"Microsoft Inc",
+        email:"dex@abc.com"
     },
     {
         id:3,
         name:'Cydney',
-        phone:'573 789 1455'
+        phone:'573 789 1455',
+        company:"Google Inc",
+        email:"efg@abc.com"
     },
     {
         id:4,
         name:'Pradeep',
-        phone:'573 789 1499'
+        phone:'573 789 1499',
+        company:"eBay Inc",
+        email:"tobb@abc.com"
     }
 ];
 
@@ -41,7 +51,6 @@ class App extends React.Component {
         return (
 
             <div>
-                <h1>Contact List<i className="fa fa-car"></i></h1>
                 <ContactList contacts={this.props.contacts}/>
             </div>
         );
